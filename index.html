@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="assets/favicon.ico" rel="shortcut icon" />
+  <title>MaestroFront - momentum</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="css/owfont-regular.css" />
+</head>
+
+<body>
+  <header class="header" data-my="01.12.2001">
+    <div class="player">
+      <div class="top-bar">
+        <span class="now-playing">Now Playing</span>
+        <i class="material-icons open">more_horiz</i>
+      </div>
+      <div class="img-area">
+        <img alt="sound">
+      </div>
+      <div class="song-details">
+        <p class="name"></p>
+        <p class="artist"></p>
+      </div>
+      <span class="arrow-open-volume"></span>
+      <div class="progress-area">
+        <div class="progress-bar"></div>
+        <div class="timer">
+          <span class="current"></span>
+          <span class="duration"></span>
+        </div>
+        <audio id="main-audio" src=""></audio>
+      </div>
+      <div class="controls">
+        <i id="repeat-plist" class="material-icons" title="Playlist looped">repeat</i>
+        <i id="prev" class="material-icons">skip_previous</i>
+        <div class="play-pause">
+          <i class="material-icons">play_arrow</i>
+        </div>
+        <i id="next" class="material-icons">skip_next</i>
+        <i id="more-music" class="material-icons">queue_music</i>
+      </div>
+      <div class="music-list">
+        <div class="player-header">
+          <div class="row">
+            <i class="material-icons">queue_music</i>
+            <span class="music-list-title">Music list</span>
+          </div>
+          <i id="close" class="material-icons">close</i>
+        </div>
+        <ul></ul>
+      </div>
+      <div class="changer-themes">
+        <div class="themes-item red-theme">Red</div>
+        <div class="themes-item orange-theme">Orange</div>
+        <div class="themes-item yellow-theme">Yellow</div>
+        <div class="themes-item green-theme">Green</div>
+        <div class="themes-item blue-theme">Blue</div>
+        <div class="themes-item purple-theme">Purple</div>
+        <span class="original-theme">original</span>
+        <i class="material-icons">close</i>
+      </div>
+    </div>
+    <div class="volume-container">
+      <input class="volume" type="range" min="0" , max="1" , step="any" , value="1">
+    </div>
+    <div class="settings">
+      <div class="settings-hide">
+        <img src="./assets/svg/settings-down-arrow.svg" width="10" height="10" alt="arrowdown">
+      </div>
+      <div class="settings-container">
+        <div class="settings-item">
+          <div class="settings-language">Language</div>
+          <div class="language-value">
+            <button class="translator-ru" data-lang='ru'>Russian</button>
+            <button class="translator-en isEnabled" data-lang='en'>English</button>
+          </div>
+        </div>
+        <div class="settings-item">
+          <div class="settings-background-sourse">Background sourse</div>
+          <div class="background-list">
+            <p class="background-item github isEnabled">GitHub</p>
+            <p class="background-item unsplash">Unsplash API</p>
+            <p class="background-item flickr">Flickr API</p>
+          </div>
+          <input class="input-tag input-unsplash" type="text" placeholder="unsplash #tags" disabled>
+          <input class="input-tag input-flickr" type="text" placeholder="flickr #tags" disabled>
+        </div>
+        <div class="settings-item">
+          <div class="settings-music-sourse">Music source</div>
+          <div class="music-value">
+            <a class="fork" href="https://github.com/MaestroFront/momentum-storage/tree/assets/playlist"
+              target="_blank">Fork</a>
+          </div>
+        </div>
+        <div class="settings-item">
+          <div class="settings-show-hide-blocks">Show/Hide blocks</div>
+          <div class="show-hide-blocks-value">
+            <div class="settings-block block-player">AudioPlayer</div>
+            <div class="settings-block block-time">Time</div>
+            <div class="settings-block block-date">Date</div>
+            <div class="settings-block block-greeting">Greeting</div>
+            <div class="settings-block block-weather">Weather</div>
+            <div class="settings-block block-todolist">To do list</div>
+            <div class="settings-block block-quotes">Quotes</div>
+          </div>
+        </div>
+        <div class="settings-item">
+          <div class="settings-links">Links</div>
+          <div class="links-value">
+            <a class="links-item" href="https://github.com/MaestroFront" target="_blank">Github</a>
+            <a class="links-item" href="https://rs.school/" target="_blank">RSschool</a>
+            <a class="links-item task"
+              href="https://github.com/rolling-scopes-school/tasks/blob/master/tasks/momentum/momentum-stage1.md"
+              target="_blank">Task</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="weather">
+      <img class="temperatureIcon" src="./assets/svg/temperatureIcon.svg" alt="temperatureIcon">
+      <img class="windIcon" src="./assets/svg/windIcon.svg" alt="windIcon">
+      <img class="humidityIcon" src="./assets/svg/humidityIcon.svg" alt="humidityIcon">
+      <input type="text" class="city" value="Minsk" />
+      <i class="weather-icon owf"></i>
+      <div class="weather-info description-container">
+        <span class="temperature"></span>
+        <span class="weather-description"></span>
+      </div>
+      <div class="weather-info wind"></div>
+      <div class="weather-info humidity"></div>
+    </div>
+  </header>
+  <main class="main">
+    <div class="slider-icons">
+      <img class="slide-prev slider-icon" src="./assets/svg/slider-prev.svg"></img>
+      <img class="slide-next slider-icon" src="./assets/svg/slider-next.svg"></img>
+    </div>
+    <time class="time"></time>
+    <date class="date"></date>
+    <div class="greeting-container">
+      <span class="greeting" data-greet="greet"></span>
+      <input type="text" class="name" placeholder="[Enter name]" />
+    </div>
+  </main>
+  <footer class="footer">
+    <img class="change-quote" src="./assets/svg/reload.svg" width="30" height="30"></img>
+    <div class="quoter-container">
+      <div class="quote"></div>
+      <div class="author"></div>
+    </div>
+    <span class="todolist-show-hide">
+      <img class="todolist-arrow" src="./assets/svg/settings-down-arrow.svg" width="10" height="10" alt="arrowdown">
+    </span>
+    <div class="todolist-container">
+      <div class="todolist-input-container">
+        <input class="todolist-input" type="text" placeholder="Add a mission">
+        <img class="plusIcon" width="30" height="30" src="./assets/svg/todolistPlusIcon.svg" alt="plusIcon">
+      </div>
+      <div class="todolist">
+        <ul class="todolist-list"></ul>
+      </div>
+    </div>
+  </footer>
+  <script src="js/script.js" type="module"></script>
+  <script src="js/musicList.js"></script>
+  <script src="js/audioplayer.js"></script>
+</body>
+
+</html>
